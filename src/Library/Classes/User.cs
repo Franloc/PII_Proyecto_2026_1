@@ -7,11 +7,15 @@ namespace Library
         {
             get {return this.name;} set {this.name=value;}
         }
+
+        
         private List<Tag> preferencias;
         public List<Tag> Preferencias
         {
             get {return this.preferencias;} set {this.preferencias=value;}
         }
+
+        //Constructor
         public User(string name)
         {
             this.name = name;
