@@ -1,26 +1,13 @@
 namespace Library
 {
-    public class Movie: IMedia
+    public class Movie: Media
     {
-        //Atributos
-        private string name;
-        public string Name
-        {
-            get {return this.name;} set {this.name = value;}
-        }
-        private float calification;
-        public float Calification
-        {
-            get {return this.calification;}
-        }
-
-        private List<Tag> tags {get;}
-        public List<Tag> Tags {get;}
-
         //Constructor
-        public Movie(string name)
+        public Movie(string name, double calification, List<Tag> tags)
         {
-            this.name = name;
+            this.Name = name;
+            this.Calification = calification;
+            this.Tags = tags;
         }
     }
 }

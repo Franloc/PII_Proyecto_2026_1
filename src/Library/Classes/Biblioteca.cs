@@ -23,11 +23,11 @@ namespace Library
 
 
         //Constructor
-        public Biblioteca(List<Movie> pelis, List<Song> canciones, List<Book> libros)
+        public Biblioteca()
         {
-            this.movies = new List<Movie>(pelis);
-            this.songs = new List<Song>(canciones);
-            this.books = new List<Book>(libros);
+            //this.movies = new List<Movie>(pelis);
+            //this.songs = new List<Song>(canciones);
+            //this.books = new List<Book>(libros);
         }
     }
 }
