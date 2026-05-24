@@ -27,7 +27,15 @@ namespace Library
         {
             
         }
-
-
+        public void DislikeMedia(User user, IMedia media)
+        {
+            //Falta mejorar proceso
+            user.Interactions.DisLikedMedia.Add(media);
+        }
+        public void LikeMedia(User user, IMedia media)
+        {
+            //Falta mejorar proceso
+            user.Interactions.LikedMedia.Add(media);
+        }
     }
 }
