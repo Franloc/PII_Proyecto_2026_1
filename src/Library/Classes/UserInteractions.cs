@@ -13,15 +13,18 @@ namespace Library
         {
             get {return this.disLikedMedia;} set {this.disLikedMedia = value;}
         }
-        private List<IMedia> viewedMedia;
-        public List<IMedia> ViewedMedia
+        private List<IMedia> history;
+        public List<IMedia> History
         {
-            get {return this.viewedMedia;} set {this.viewedMedia = value;}
+            get {return this.history;} set {this.history = value;}
         }
 
         //Constructor
         public UserInteractions()
         {
+            likedMedia = new List<IMedia>();
+            disLikedMedia = new List<IMedia>();
+            history = new List<IMedia>();
         }
     }
 }
