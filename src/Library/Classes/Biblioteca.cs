@@ -10,12 +10,24 @@ namespace Library
         {
             get{return this.movies;} set{this.movies = value;}
         }
+        private List<Song> songs;
+        public List<Song> Songs
+        {
+            get{return this.songs;} set{this.songs = value;}
+        }
+        private List<Book> books;
+        public List<Book> Books
+        {
+            get{return this.books;} set{this.books = value;}
+        }
 
 
         //Constructor
-        public Biblioteca(List<Movie> pelis)
+        public Biblioteca(List<Movie> pelis, List<Song> canciones, List<Book> libros)
         {
             this.movies = new List<Movie>(pelis);
+            this.songs = new List<Song>(canciones);
+            this.books = new List<Book>(libros);
         }
     }
 }
