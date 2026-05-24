@@ -13,7 +13,6 @@ namespace Library
         {
             get {return this.calification;}
         }
-
         private List<Tag> tags {get;}
         public List<Tag> Tags {get;}
 
