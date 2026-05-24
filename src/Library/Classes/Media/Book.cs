@@ -1,6 +1,6 @@
 namespace Library
 {
-    public class Pelicula: IMedia
+    public class Book: IMedia
     {
         //Atributos
         private string name;
@@ -18,7 +18,7 @@ namespace Library
         public List<Tag> Tags {get;}
 
         //Constructor
-        public Pelicula(string name)
+        public Book(string name)
         {
             this.name = name;
         }
