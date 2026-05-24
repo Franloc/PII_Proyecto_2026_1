@@ -14,17 +14,18 @@ namespace Library
             get {return this.preferences;} set {this.preferences=value;}
         }
 
-        private List<Interaction> interactions;
-        public List<Interaction> Interactions
+        private UserInteractions interactions;
+        public UserInteractions Interactions
         {
             get {return this.interactions;} set {this.interactions = value;}
         }
+
         //Constructor
         public User(string name)
         {
             this.name = name;
             preferences = new List<Tag>();
-            interactions = new List<Interaction>();
+            interactions = new UserInteractions();
         }
     }
 }
