@@ -1,5 +1,6 @@
 namespace Library
 {
+    //Fachada
     public class Bot
     {
         private Biblioteca biblioteca;
@@ -27,6 +28,6 @@ namespace Library
             
         }
 
-        
+
     }
 }
