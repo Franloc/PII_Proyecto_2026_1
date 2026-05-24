@@ -19,8 +19,6 @@ namespace Library
             get {return this.viewedMedia;} set {this.viewedMedia = value;}
         }
 
-
-
         //Constructor
         public UserInteractions()
         {
