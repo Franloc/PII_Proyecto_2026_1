@@ -5,17 +5,17 @@ namespace Library
     public class Biblioteca
     {
         //Listas de contenido(Media)
-        private List<Pelicula> peliculas;
-        public List<Pelicula> Peliculas
+        private List<Movie> movies;
+        public List<Movie> Movies
         {
-            get{return this.peliculas;} set{this.peliculas = value;}
+            get{return this.movies;} set{this.movies = value;}
         }
 
 
         //Constructor
-        public Biblioteca(List<Pelicula> pelis)
+        public Biblioteca(List<Movie> pelis)
         {
-            this.peliculas = new List<Pelicula>(pelis);
+            this.movies = new List<Movie>(pelis);
         }
     }
 }
