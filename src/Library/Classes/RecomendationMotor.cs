@@ -2,10 +2,16 @@ namespace Library
 {
     public class RecommendationEngine
     {
+        private List<IRecommendationStrategy> recommendationStrategies;
+        public List<IRecommendationStrategy> RecommendationStrategies
+        {
+            get {return this.recommendationStrategies;} set{this.recommendationStrategies = value;}
+        }
 
         //Constructor
-        public RecommendationEngine()
+        public RecommendationEngine(List<IRecommendationStrategy> estrategias)
         {
+            this.recommendationStrategies = estrategias;
         }
     }
 }
