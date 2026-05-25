@@ -16,6 +16,6 @@ namespace Library
         }
 
         private List<Tag> tags {get; set;}
-        public List<Tag> Tags {get; set;}
+        public List<Tag> Tags {get {return this.tags;} set {this.tags = value;}}
     }
 }

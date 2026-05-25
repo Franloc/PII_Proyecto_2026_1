@@ -4,30 +4,17 @@ namespace Library
 {
     public class Biblioteca
     {
-        //Listas de contenido(Media)
-        private List<Movie> movies;
-        public List<Movie> Movies
+        //Lista de contenido(Media)
+        private List<IMedia> media;
+        public List<IMedia> Media
         {
-            get{return this.movies;} set{this.movies = value;}
+            get {return this.media;} set {this.media = value;}
         }
-        private List<Song> songs;
-        public List<Song> Songs
-        {
-            get{return this.songs;} set{this.songs = value;}
-        }
-        private List<Book> books;
-        public List<Book> Books
-        {
-            get{return this.books;} set{this.books = value;}
-        }
-
 
         //Constructor
         public Biblioteca()
         {
-            this.movies = new List<Movie>();
-            this.songs = new List<Song>();
-            this.books = new List<Book>();
+            this.media = new List<IMedia>();
         }
     }
 }
