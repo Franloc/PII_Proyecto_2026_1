@@ -6,7 +6,7 @@ namespace Library
         private string author;
         public string Author
         {
-            get; set;
+            get {return this.author;} set {this.author = value;}
         }
 
         //Constructor
