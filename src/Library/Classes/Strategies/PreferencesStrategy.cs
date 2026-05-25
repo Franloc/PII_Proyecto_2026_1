@@ -2,11 +2,11 @@ namespace Library
 {
     public class PreferencesStrategy : IRecommendationStrategy
     {
-        public List<IMedia> Recommend(User user, List<IMedia> list_to_recommend)
+        public List<IMedia> Recommend(User user, Biblioteca biblioteca)
         {
             List<IMedia> recommendations = new List<IMedia>();
 
-            foreach (IMedia media in list_to_recommend)
+            foreach (IMedia media in biblioteca.Media)
             {
                 foreach (Tag preference in user.Preferences)
                 {
@@ -16,12 +16,7 @@ namespace Library
                     }
                 }
             }
-
-        return recommendations;
+            return recommendations;
         }
-
-
-
-        
     }
 }
