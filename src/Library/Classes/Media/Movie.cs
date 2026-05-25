@@ -1,5 +1,6 @@
 namespace Library
 {
+    // Clase que representa una pelicula
     public class Movie: Media
     {
         //Constructor

@@ -1,6 +1,6 @@
 namespace Library
 {
-    public interface IFilter
+    public interface IFilter // Interfaz de los filtros
     {
         List<IMedia> Filter(User user, List<IMedia> media);
     }

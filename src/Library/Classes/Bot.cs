@@ -1,6 +1,6 @@
 namespace Library
 {
-    //Fachada
+    // Fachada
     public class Bot
     {
         private Biblioteca biblioteca;
@@ -17,7 +17,7 @@ namespace Library
 
         public void RecommendMovies()
         {
-            
+            // RecommendationEngine.Recommend
         }
         public void RecommendSongs()
         {
@@ -27,14 +27,22 @@ namespace Library
         {
             
         }
+
+        //No puede haber un objeto en dislike y like al mismo tiempo
         public void DislikeMedia(User user, IMedia media)
         {
-            //Falta mejorar proceso
+            if (user.Interactions.LikedMedia.Contains(media))
+            {
+                user.Interactions.LikedMedia.Remove(media);
+            }
             user.Interactions.DisLikedMedia.Add(media);
         }
         public void LikeMedia(User user, IMedia media)
         {
-            //Falta mejorar proceso
+            if (user.Interactions.DisLikedMedia.Contains(media))
+            {
+                user.Interactions.DisLikedMedia.Remove(media);
+            }
             user.Interactions.LikedMedia.Add(media);
         }
     }

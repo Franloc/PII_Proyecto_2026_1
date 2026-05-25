@@ -1,5 +1,6 @@
 namespace Library
 {
+    // Clase abstracta sobre el Media
     public abstract class Media: IMedia
     {
         //Atributos
