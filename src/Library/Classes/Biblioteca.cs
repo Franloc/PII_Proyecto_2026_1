@@ -25,9 +25,9 @@ namespace Library
         //Constructor
         public Biblioteca()
         {
-            //this.movies = new List<Movie>(pelis);
-            //this.songs = new List<Song>(canciones);
-            //this.books = new List<Book>(libros);
+            this.movies = new List<Movie>();
+            this.songs = new List<Song>();
+            this.books = new List<Book>();
         }
     }
 }
