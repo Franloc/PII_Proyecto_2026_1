@@ -23,7 +23,7 @@ namespace Library
         {
             get {return this.biblioteca;} set {this.biblioteca = value;}
         }
-        public List<IMedia> Recommend(User user)
+        public List<IMedia> Recommend(User user, Type tipo)
         {
             List<IMedia> recommendations = new List<IMedia>();
             foreach (IRecommendationStrategy strategy in this.recommendationStrategies)
@@ -33,7 +33,7 @@ namespace Library
             recommendations = recommendations.Distinct().ToList();
             foreach (IFilter filter in this.filters)
             {
-                recommendations = filter.Filter(user, recommendations);
+                recommendations = filter.Filter(user, recommendations, tipo);
             }
             recommendations = this.rankingStrategy.Rank(user, recommendations);
             return recommendations;

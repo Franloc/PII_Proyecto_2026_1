@@ -2,14 +2,8 @@ namespace Library.Tests
 {
     public class BibliotecaTests
     {
-        [SetUp]
-        public void Setup()
-        {
-    
-        }
-
         /// <summary>
-        /// Test Sobre la biblioteca
+        /// Test Sobre la biblioteca, evalua que se creen y organizen correctamente los objetos de dominio y los tags
         /// </summary>
         [Test]
         public void BuildMediaAndTags_AddThemToTheBibliotec_AddedCorrectly()

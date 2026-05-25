@@ -3,7 +3,7 @@ namespace Library
     // Clase filtro para filtrar por historial
     public class HistoryFilter : IFilter
     {
-        public List<IMedia> Filter(User user, List<IMedia> list_to_filter)
+        public List<IMedia> Filter(User user, List<IMedia> list_to_filter, Type tipo)
         {
             List<IMedia> filtered_list = new List<IMedia>(); // Lista que va a returnear el código
             foreach (IMedia media in list_to_filter) // Recorro la lista a filtrar

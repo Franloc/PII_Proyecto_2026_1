@@ -3,6 +3,11 @@ namespace Library
     // Fachada
     public class Bot
     {
+        private RecommendationEngine recommendationEngine;
+        public RecommendationEngine RecommendationEngine
+        {
+            get {return this.recommendationEngine;}
+        }
         private Biblioteca biblioteca;
         public Biblioteca Biblioteca
         {
@@ -10,22 +15,17 @@ namespace Library
         }
 
         //Constructor
-        public Bot(Biblioteca biblioteca)
+        public Bot(Biblioteca biblioteca, RecommendationEngine motor)
         {
             this.biblioteca = biblioteca;
+            this.recommendationEngine = motor;
         }
 
-        public void RecommendMovies()
+        public void Recommend(User user, Type tipo)
         {
-            // RecommendationEngine.Recommend
-        }
-        public void RecommendSongs()
-        {
-            
-        }
-        public void RecommendBooks()
-        {
-            
+            List<IMedia> Recommendations = new List<IMedia>();
+            Recommendations = RecommendationEngine.Recommend(user, tipo);
+            //Para proxima entrega hacer clase que se encargue de mostrar las recomendaciones
         }
 
         //No puede haber un objeto en dislike y like al mismo tiempo
@@ -45,5 +45,8 @@ namespace Library
             }
             user.Interactions.LikedMedia.Add(media);
         }
+
+
+
     }
 }
