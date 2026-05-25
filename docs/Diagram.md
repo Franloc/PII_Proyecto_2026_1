@@ -120,6 +120,7 @@ RecommendationEngine --> IRecommendationStrategy
 RecommendationEngine --> IFilter
 RecommendationEngine --> IRankingStrategy
 RecommendationEngine --> Biblioteca
+RecommendationEngine --> Bot
 
 PreferencesStrategy --> Biblioteca
 HistoryStrategy --> Biblioteca

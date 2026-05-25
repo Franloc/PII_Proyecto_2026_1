@@ -1,4 +1,3 @@
-
 //Clase que representa la biblioteca de contenido disponible
 namespace Library
 {
