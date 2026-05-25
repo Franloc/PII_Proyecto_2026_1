@@ -1,5 +1,6 @@
 namespace Library
 {
+    //Clase que guarda informacion sobre una caracteristica especifica del Media.
     public class Tag
     {
         private string name;

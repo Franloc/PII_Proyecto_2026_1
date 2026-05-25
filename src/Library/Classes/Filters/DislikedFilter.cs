@@ -1,5 +1,6 @@
 namespace Library
 {
+    // Clase filtro que filtra por Disliked Media
     public class DislikedFilter : IFilter
     {
         public List<IMedia> Filter(User user, List<IMedia> list_to_recommend)

@@ -1,5 +1,7 @@
 namespace Library
 {
+    // Clase que representa al Usuario
+    // Contiene Nombre, preferencias y sus historial de interacciones
     public class User
     {
         private string name;

@@ -13,7 +13,7 @@ namespace Library
         {
             get {return this.disLikedMedia;} set {this.disLikedMedia = value;}
         }
-        private List<IMedia> history;
+        private List<IMedia> history; //Aca forma parte lo que ya se recomendo
         public List<IMedia> History
         {
             get {return this.history;} set {this.history = value;}

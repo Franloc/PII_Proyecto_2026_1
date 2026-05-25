@@ -1,5 +1,6 @@
 namespace Library
 {
+    // Clase que representa una cancion
     public class Song: Media
     {
         private string artist;

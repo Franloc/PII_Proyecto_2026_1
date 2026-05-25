@@ -1,5 +1,6 @@
 namespace Library
 {
+    // Clase filtro para filtrar por historial
     public class HistoryFilter : IFilter
     {
         public List<IMedia> Filter(User user, List<IMedia> list_to_recommend)

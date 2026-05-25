@@ -1,5 +1,6 @@
 namespace Library
 {
+    //Motor de Recomendacion
     public class RecommendationEngine
     {
         private List<IRecommendationStrategy> recommendationStrategies;

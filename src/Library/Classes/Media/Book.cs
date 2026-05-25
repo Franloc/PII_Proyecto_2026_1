@@ -1,5 +1,6 @@
 namespace Library
 {
+    // Clase que representa un libro
     public class Book: Media
     {
         private string author;
