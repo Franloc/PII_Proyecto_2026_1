@@ -2,7 +2,7 @@ namespace Library
 {
     public class HistoryStrategy : IRecommendationStrategy
     {
-        public List<IMedia> Recommend(User user, List<IMedia> list_to_recommend)
+        public List<IMedia> Recommend(User user, Biblioteca biblioteca)
         {
             List<IMedia> recommendations = new List<IMedia>();
             List<Tag> consumedTags = new List<Tag>();
@@ -17,11 +17,11 @@ namespace Library
                     }
                 }
             }
-            foreach (IMedia media in list_to_recommend)
+            foreach (IMedia media in biblioteca.Media)
             {
                 foreach (Tag tag in media.Tags)
                 {
-                    if (consumedTags.Contains(tag))
+                    if (consumedTags.Contains(tag) && !recommendations.Contains(media))
                     {
                         recommendations.Add(media);
                     }
@@ -29,9 +29,5 @@ namespace Library
             }
             return recommendations;
         }
-
-
-
-        
     }
 }
