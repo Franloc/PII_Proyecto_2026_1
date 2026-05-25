@@ -1,81 +1,129 @@
-```mermaid
 classDiagram
-%%Usuario
-class Usuario{
-    +String Nombre
-    +Email
-    +List Preferencias
 
-    %%Capaz poner
-    %%+List LikedMedia
-    %%+List GetLikedActores()
-    %%+List GetLikedDirectors()
-    %%+List GetLikedGeneros()
-}
-
-class Biblioteca{
-    -List ListaPeliculas
-    +void CrearPelicula()
-}
-
-class IMedia{
+class IMedia {
     <<interface>>
-    +string Nombre
-    +float Calificacion
+    +string Name
+    +double Calification
+    +List<Tag> Tags
 }
 
-class Pelicula{
-    -string Nombre
-    -string Genero
-    -string Director
-    -List Actores
-    +float calificacion
-
-}
-
-class MotorRecomendaciones{
-    +RecomendarItem(Dominio)
-}
-
-%%Estrategias De Recomendaciones
-class IEstrategiaDeRecomendacion{
-    <<Interface>>
-    +Pelicula Recomendacion()
-}
-
-class EstrategiaPreferencias{}
-class EstrategiaCalificacion{}
-class EstrategiaPopularidad{}
-
-%%Filtros
-class IFiltro{
+class IRecommendationStrategy {
     <<interface>>
-    +Filtrar()
-}
-class Filtro1{}
-
-class Printer{
-    +void Print()
+    +Recommend(User user, Biblioteca biblioteca) List<IMedia>
 }
 
+class IRankingStrategy {
+    <<interface>>
+    +Rank(User user, List<IMedia> media) List<IMedia>
+}
 
-%%Relaciones
-Biblioteca o-- Pelicula
+class IFilter {
+    <<interface>>
+    +Filter(User user, List<IMedia> media) List<IMedia>
+}
 
-MotorRecomendaciones ..> IEstrategiaDeRecomendacion
+class Tag {
+    -string name
+}
 
-%%Dependencias del multimedia
-Pelicula ..|> IMedia
+class Media {
+    <<abstract>>
+    -string name
+    -double calification
+    -List<Tag> tags
+}
 
-%%Dependencias de las estrategias
-EstrategiaPreferencias ..|> IEstrategiaDeRecomendacion
-EstrategiaCalificacion ..|> IEstrategiaDeRecomendacion
-EstrategiaPopularidad ..|> IEstrategiaDeRecomendacion
+class Movie{}
 
-%%Dependencia de los filtros
-Filtro1 ..|> IFiltro
-Filtro1 ..> Usuario
+class Song {
+    -string artist
+}
 
-%%Imprimir Texto Recomendacion
-Printer --> Usuario
-```
+class Book {
+    -string author
+}
+
+class User {
+    -string name
+    -List<Tag> preferences
+    -UserInteractions interactions
+}
+
+class UserInteractions {
+    -List<IMedia> likedMedia
+    -List<IMedia> disLikedMedia
+    -List<IMedia> history
+}
+
+class Biblioteca {
+    -List<IMedia> media
+}
+
+class RecommendationEngine {
+    -List<IRecommendationStrategy> recommendationStrategies
+    -List<IFilter> filters
+    -IRankingStrategy rankingStrategy
+    -Biblioteca biblioteca
+
+    +Recommend(User user) List<IMedia>
+}
+
+class PreferencesStrategy {
+    +Recommend(User user, Biblioteca biblioteca) List<IMedia>
+}
+
+class HistoryStrategy {
+    +Recommend(User user, Biblioteca biblioteca) List<IMedia>
+}
+
+class PreferenceRankingStrategy {
+    +Rank(User user, List<IMedia> media) List<IMedia>
+}
+
+class HistoryFilter {
+    +Filter(User user, List<IMedia> media) List<IMedia>
+}
+
+class DislikedFilter {
+    +Filter(User user, List<IMedia> media) List<IMedia>
+}
+
+class Bot {
+    -Biblioteca biblioteca
+
+    +DislikeMedia(User user, IMedia media)
+    +LikeMedia(User user, IMedia media)
+}
+
+IMedia <|.. Media
+
+Media <|-- Movie
+Media <|-- Song
+Media <|-- Book
+
+IRecommendationStrategy <|.. PreferencesStrategy
+IRecommendationStrategy <|.. HistoryStrategy
+
+IRankingStrategy <|.. PreferenceRankingStrategy
+
+IFilter <|.. HistoryFilter
+IFilter <|.. DislikedFilter
+
+User --> UserInteractions
+User --> Tag
+
+UserInteractions --> IMedia
+
+Biblioteca --> IMedia
+
+RecommendationEngine --> IRecommendationStrategy
+RecommendationEngine --> IFilter
+RecommendationEngine --> IRankingStrategy
+RecommendationEngine --> Biblioteca
+
+PreferencesStrategy --> Biblioteca
+HistoryStrategy --> Biblioteca
+
+Media --> Tag
+
+Bot --> Biblioteca
