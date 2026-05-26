@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+
 namespace Library
 {
     public interface IMedia //Interfaz de Media

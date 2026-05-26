@@ -1,3 +1,6 @@
+using System;
+using System.Collections.Generic;
+
 namespace Library
 {
     // Clase filtro para filtrar por historial
