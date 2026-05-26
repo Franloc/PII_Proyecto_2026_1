@@ -1,3 +1,5 @@
+using NUnit.Framework;
+
 namespace Library.Tests
 {
     // Tests para la correcta seleccion de recomendaciones, Se dejara listo para la entrega 2
