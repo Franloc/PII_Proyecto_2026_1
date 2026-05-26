@@ -1,3 +1,6 @@
+using System;
+using System.Collections.Generic;
+
 namespace Library
 {
     public interface IFilter // Interfaz de los filtros

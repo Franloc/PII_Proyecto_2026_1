@@ -1,5 +1,7 @@
 
 //Clase que representa la biblioteca de contenido disponible
+using System.Collections.Generic;
+
 namespace Library
 {
     public class Biblioteca
